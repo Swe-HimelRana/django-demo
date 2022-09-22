@@ -1,0 +1,53 @@
+
+{% extends "../../main.html" %}
+
+{% block content %}
+
+<small>(Upwork.com Proposal Demo Page)</small>
+<h1> Welcome to Dashboard (Mobile) <small>
+
+    <!-- Slide 1 -->
+     <div id="slide1" style="border-width:1px;border-color:black;border:solid;">
+        <p>Days of week</p>
+        <ul>
+            {% for day in fullweek %}
+                <li>{{day}}</li>
+            {% endfor %}
+        </ul>
+        <p>Months of year</p>
+        <ul>
+            {% for month in fullyear %}
+                <li>{{month}}</li>
+            {% endfor %}
+        </ul>
+     </div>
+ 
+    <div id="slide2" style="border-width:1px;border-color:black;border:solid;">
+        <div class="play">
+            <audio src="media/Sounds-of-protest.mp3" controls="controls">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+        <p>List of 5 countries</p>
+        <ul>
+            {% for country in countries %}
+                <li>{{country}}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    
+    <div id="slide3" style="border-width:1px;border-color:black;border:solid;">
+        {% include "./parts/chart1.html" %}
+        {% include "./parts/chart2.html" %}
+    </div>
+
+    <hr>
+
+    <a href="#slide1">Link to slide 1</a>
+    <a href="#slide2">Link to slide 2</a>
+    <a href="#slide3">Link to slide 3</a>
+     
+    <a href="{% url 'chart' %}"> Link to chart Page</a>
+    <a href="{% url 'countries' %}"> Link to countries Page</a>
+
+{% endblock %}

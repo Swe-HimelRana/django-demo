@@ -1,0 +1,43 @@
+
+{% extends "../../main.html" %}
+
+{% block content %}
+
+<small>(Upwork.com Proposal Demo Page)</small>
+<h1> Welcome to Dashboard (Desktop) </h1>
+
+
+    <div class="play">
+        <audio src="media/Sounds-of-protest.mp3" controls="controls">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+     
+    <h5>Today: {{today}}</h5>
+    <h5>Month: {{thismonth}}</h5>
+    <hr>
+    <p>Days of week</p>
+    <ul>
+        {% for day in fullweek %}
+            <li>{{day}}</li>
+        {% endfor %}
+    </ul>
+
+    <hr>
+    <p>Months of year</p>
+    <ul>
+        {% for month in fullyear %}
+            <li>{{month}}</li>
+        {% endfor %}
+    </ul>
+
+    <hr>
+    {% include "./parts/chart2.html" %}
+    <hr>
+    <p>Countries</p>
+    {% include "./parts/countries.html" with country_list=countries %}
+     
+
+    <a href="{% url 'chart' %}"> Link to chart Page</a>
+
+{% endblock %}

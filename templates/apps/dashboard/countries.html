@@ -1,0 +1,12 @@
+
+{% extends "../../main.html" %}
+
+{% block content %}
+
+    <h1> Welcome to Countries Page</h1>
+    <ul>
+    {% for country in countries %}
+        <li>{{ country }}</li>
+    {% endfor %}
+    </ul>
+{% endblock %}
